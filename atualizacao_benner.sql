@@ -55,3 +55,7 @@ WHERE
 	(YEAR(data_atualizacao_benner) < YEAR(GETDATE()) OR
     (YEAR(data_atualizacao_benner) = YEAR(GETDATE()) AND MONTH(data_atualizacao_benner) < MONTH(GETDATE()))) AND
     (fase LIKE '%AF%' OR fase LIKE '%DP%' OR fase LIKE 'Alienação%')
+
+
+
+
