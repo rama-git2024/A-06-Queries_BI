@@ -37,6 +37,7 @@ SELECT
 	CAST ((CASE WHEN c.F01132 = 'AF 6.1 - Envio do Imóvel ao Real Estate' OR c.F01132 = 'AF 7.1 - Operação Liquidada' OR c.F01132 = 'DP 1.5.2 - Documentação aceita' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 6.1',
 	CAST ((CASE WHEN c.F01132 = 'AF 6.2 - Documentação aceita' OR c.F01132 = 'AF 7.1 - Operação Liquidada' OR c.F01132 = 'DP 1.5.2 - Documentação aceita' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 6.2',
 	CAST ((CASE WHEN c.F01132 = 'AF 9.3 - Leilão Negativo' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 9.3',
+	CAST ((CASE WHEN c.F01132 = 'AF 12.9 - Ônus na matrícula' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 12.9',
     DATEDIFF(DAY,
         (CASE WHEN c.F01132 = 'AF 0.7 - Pendência regularizada: Prosseguir Distribuição CRI' OR c.F01132 = 'Na esteira de ajuizamento com kit OK' THEN a.F00385 ELSE NULL END),
         (CASE WHEN c.F01132 = 'AF 1.1 - Distribuição via CRI' OR c.F01132 = 'Protocolo do Requerimento de Intimação' THEN a.F00385 ELSE NULL END)
