@@ -82,7 +82,8 @@ SELECT
     		WHEN c.F01132 = 'AF 2.5 - Intimação por Hora Certa' THEN 2
     		WHEN c.F01132 = 'AF 2.6 - Intimação Positiva - Edital Alienação' THEN 3
     		WHEN c.F01132 = 'AF 2.9 - Intimação Eletrônica (What’s App ou e-mail)' THEN 4
-    	END) AS tipo_intimacao 
+    	END) AS tipo_intimacao,
+    MAX(CAST(CASE WHEN c.F01132 = 'AF 12.9 - Ônus na matrícula' THEN a.F00395 ELSE NULL END AS VARCHAR(5000))) AS 'observacao_AF_129'
 FROM [ramaprod].[dbo].T00069 AS a
 LEFT JOIN [ramaprod].[dbo].T00003 AS b ON a.F08501 = b.ID
 LEFT JOIN [ramaprod].[dbo].T00064 AS c ON a.F01133 = c.ID
