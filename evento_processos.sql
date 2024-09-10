@@ -33,6 +33,7 @@ SELECT
     MAX(p.F00075) AS estado,
 	MAX(p.F00074) UF,
 	MAX(k.F02568) + '-' + MAX(p.F00074) AS comarca_UF,
+	CAST (MAX(CASE WHEN c.F01132 = 'AF 0.5 - Impedimento Cobrança / Jurídico' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 0.7',
 	CAST (MAX(CASE WHEN c.F01132 = 'AF 0.7 - Pendência regularizada: Prosseguir Distribuição CRI' OR c.F01132 = 'Na esteira de ajuizamento com kit OK' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 0.7',
 	CAST (MAX(CASE WHEN c.F01132 = 'AF 1.1 - Distribuição via CRI' OR c.F01132 = 'Protocolo do Requerimento de Intimação' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 1.1',
 	CAST (MAX(CASE WHEN c.F01132 = 'AF 2.8 - Todas as Intimações Positivas' THEN a.F00385 ELSE NULL END) AS DATE) AS 'AF 2.8',
