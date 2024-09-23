@@ -35,7 +35,8 @@ SELECT
 	CASE
 		WHEN DATEDIFF(DAY, MAX(a.F00455), MAX(a.F00451)) < 0 THEN 0
 		ELSE DATEDIFF(DAY, MAX(a.F00455), MAX(a.F00451))
-	END	AS dias_atrasados
+	END	AS dias_atrasados,
+	MAX(CAST(a.F00460 AS VARCHAR(5000))) AS observacao
 FROM [ramaprod].[dbo].T00076 AS a
 LEFT JOIN [ramaprod].[dbo].T00077 AS b ON a.F00447 = b.ID
 LEFT JOIN [ramaprod].[dbo].T00041 AS c ON a.F06982 = c.ID
