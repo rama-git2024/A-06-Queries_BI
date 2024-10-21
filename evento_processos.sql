@@ -6,7 +6,6 @@ SELECT
 	MAX(a.F04461) AS pasta,
 	MAX(n.F00091) AS adverso,
 	MAX(n.F27086) AS cpf_cnpj,
-	MAX(i.F00091) AS adverso_nome,
 	MAX (
 		CASE
 			WHEN f.F25017 = 1 THEN 'Ativo'
